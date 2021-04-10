@@ -1,4 +1,4 @@
-import React , {useState, useEffect,useRef }from "react"
+import React , {useState, useEffect }from "react"
 import { useHistory } from 'react-router-dom'
 import "../css/search.css"
 import Container from "../components/container"
@@ -18,9 +18,6 @@ const Search = () =>{
     const [ searchBook , setSearchBook] = useState("javascript")
     const [ searchResults , setSearchResults] = useState([])
 
-
-    const bookRef = useRef()
-    console.log(bookRef)
    
     const history = useHistory()
 

@@ -14,7 +14,8 @@ const Results = ({searchResults, handleView , handleSave })=>{
           <h3 className="authors-text">{book.volumeInfo.authors[0]}</h3>
             </div>
             <div className="col-md-6">
-                <button onClick ={handleView} className="view-btn">View</button>
+                <button onClick ={handleView} className="view-btn"> <a href={book.volumeInfo.infoLink}>View</a>
+                </button>
                 <button onClick={()=>{handleSave(book.id)}}className="save-btn"> Save</button>
             </div>
           </row>
@@ -26,10 +27,6 @@ const Results = ({searchResults, handleView , handleSave })=>{
              <h3 className="description-text">
                  Description: <br/>
                 {book.volumeInfo.description}
-                 
-             </h3>
-             <h3 className="Link-text">
-                 <a href={book.volumeInfo.infoLink}>Info Link Click here</a>
                  
              </h3>
             </div>
