@@ -1,12 +1,12 @@
 import React from "react"
-import {Link} from "react-router-dom"
 
 
 
-const Results = ({searchResults, handleView , handleSave })=>{ 
+const SavedResults = ({savedBooks, handleDelete })=>{ 
   
    return(
-       searchResults.map(book => 
+       savedBooks.map(book => 
+  
         ( <div key={book.id}>
           <h1 className="result-text">Results</h1>
           <row className="title-row">
@@ -15,10 +15,9 @@ const Results = ({searchResults, handleView , handleSave })=>{
           <h3 className="authors-text">{book.volumeInfo.authors}</h3>
             </div>
             <div className="col-md-6">
-                <button onClick ={handleView} className="view-btn"> <a href={book.volumeInfo.infoLink}>View</a>
+                <button  className="view-btn"> <a href={book.volumeInfo.infoLink}>View</a>
                 </button>
-                <button 
-                onClick={()=>{handleSave(book.id)}} className="save-btn"><Link to="/saved">Save</Link></button>
+                <button onClick={()=>{handleDelete(book.id)}} className="delete-btn">Delete</button>
             </div>
           </row>
           <div className="col-md-4">
@@ -45,4 +44,4 @@ const Results = ({searchResults, handleView , handleSave })=>{
 
 
 
-export default Results
+export default SavedResults

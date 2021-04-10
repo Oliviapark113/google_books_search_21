@@ -17,19 +17,19 @@ const Search = () =>{
 
     const [ searchBook , setSearchBook] = useState("javascript")
     const [ searchResults , setSearchResults] = useState([])
+    const savedBooks = []
 
    
     const history = useHistory()
 
-    // useEffect(()=>{
-    //     fetchBookData()
-    // }, [])
+    useEffect(()=>{
+        fetchBookData()
+    }, [])
 
     const fetchBookData = e => {
      
         axios(`https://www.googleapis.com/books/v1/volumes?q=${searchBook}`)
         .then(response=> {
-            console.log(response.data.items)
             setSearchResults(response.data.items)
         })
         .catch(err=> console.log(err))
@@ -50,21 +50,14 @@ const Search = () =>{
           fetchBookData()
       }
 
-      const handleView = () =>{
 
-          
-      }
 
       const handleSave = id => {
 
         const findBook = searchResults.find(book=>{
-              console.log(book)
               return book.id === id
         })
          
-
-       console.log(findBook)
-
         const bookData = {
 
             title: findBook.volumeInfo.title,
@@ -75,10 +68,18 @@ const Search = () =>{
            
           }
           API.saveBook(bookData)
-            .then(response => history.push("/saved"))
+            .then(response => {
+                savedBooks.push(response)
+                console.log(savedBooks)
+                history.push("/saved")
+            }
+               
+            )
             .catch(err => console.log(err))
 
       }
+
+
 
     return (
        <Container>
@@ -96,7 +97,6 @@ const Search = () =>{
          <Row>
              <Results
               searchResults = {searchResults}
-              handleView ={handleView}
               handleSave = {handleSave}
              />
          </Row>
