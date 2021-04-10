@@ -12,18 +12,19 @@ const bookSchema = new Schema({
     ],
 
     description: {
-        type: Text,
+        type:String,
         // required: "Description is required",
     },
 
     image: {
         type: String,
     },
+
     link: {
         type: String
     }
 
 })
 
-const Drawing = mongoose.model("Book", bookSchema)
+const Book = mongoose.model("Book", bookSchema)
 module.exports = Book

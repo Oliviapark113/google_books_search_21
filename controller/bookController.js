@@ -1,9 +1,9 @@
-const db = require('../models')
+const Book = require('../models/book')
 
 module.exports = {
   
   getBooks: function(req, res) {
-    db.Book.find({})
+    Book.find({})
     .sort({ date: -1 })
     .then(books => {res.json(books)} )
     .catch(err =>res.status(500).send())  
@@ -11,15 +11,17 @@ module.exports = {
   },
 
   createBooks: function(req, res) {
-    db.Book.create(req.body)
+    Book.create(req.body)
     .then(bookData => {res.json(bookData)})
-    .catch(err =>res.status(500).send()) 
+    .catch(err =>{
+      console.log(err)
+      res.status(500).send()}) 
 
   },
   
   getBook: function(req, res) {
       const {id } = req.params
-      db.Book.findById(id)
+     Book.findById(id)
       .then(book => {res.json(book)})
       .catch(err =>res.status(500).send())       
  
@@ -27,7 +29,7 @@ module.exports = {
 
   deleteBook: function(req, res) {
     const {id } = req.params
-    db.Book.findByIdAndDelete(id)
+    Book.findByIdAndDelete(id)
     .then(book => {res.json(book)})
     .catch(err =>res.status(500).send())
   },
