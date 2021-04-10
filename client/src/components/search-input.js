@@ -3,15 +3,20 @@ import React from "react"
 
 
 
-const SearchInput = ()=>{ 
+const SearchInput = ({searchBooks, handleInputChange, handleSubmit})=>{ 
 
    return(
     <div className="col-md-12">
     <label htmlFor="bookSearch">Book Search</label>
     <br/>
-    <input className="search-input" />
+    <input className="search-input"
+              type="text" 
+               name="searchBooks"
+               value ={searchBooks}
+               onChange={handleInputChange}/>
     <br/>
-    <button className="search-btn">Search</button>
+    <button type="submit" className="search-btn"
+    onClick={handleSubmit}>Search</button>
     </div>
     )
 
