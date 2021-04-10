@@ -5,6 +5,7 @@ import Row from "../components/row"
 import Col from "../components/col"
 import HeaderText from "../components/headertext"
 import SearchInput from "../components/search-input"
+import Results from "../components/results"
 import axios from "axios"
 
 
@@ -12,18 +13,20 @@ import axios from "axios"
 
 const Search = () =>{
 
-    const [ searchBooks , setSearchBooks] = useState([])
+    const [ searchBook , setSearchBook] = useState("javascript")
+    const [ searchResults , setSearchResults] = useState([])
 
 
-    useEffect(()=>{
-        fetchBookData()
-    }, [])
+    // useEffect(()=>{
+    //     fetchBookData()
+    // }, [])
 
-    const fetchBookData = () => {
-        axios(`https://www.googleapis.com/books/v1/volumes?q=${searchBooks}`)
+    const fetchBookData = e => {
+     
+        axios(`https://www.googleapis.com/books/v1/volumes?q=${searchBook}`)
         .then(response=> {
             console.log(response.data.items)
-            // setSearchBooks(response.data.items)
+            setSearchResults(response.data.items)
         })
         .catch(err=> console.log(err))
     }
@@ -32,16 +35,26 @@ const Search = () =>{
 
         const name = e.target.name;
         const value = e.target.value;
-        setSearchBooks(value)
+        setSearchBook(value)
       
       }
 
+      console.log(searchBook)
+
       const handleSubmit = e =>{
           e.preventDefault()
+          fetchBookData()
       }
 
+      const handleView = () =>{
+
+          
+      }
+
+      const handleSave = () => {
 
 
+      }
 
     return (
        <Container>
@@ -53,10 +66,15 @@ const Search = () =>{
          <Row>
     
              <SearchInput handleInputChange = {handleInputChange}
-            searchBooks = {searchBooks}
-            handleSubmit={handleSubmit}/>
-           
-            
+            searchBook = {searchBook}
+            handleSubmit={handleSubmit}/>         
+         </Row>
+         <Row>
+             <Results
+              searchResults = {searchResults}
+              handleView ={handleView}
+              handleSave = {handleSave}
+             />
          </Row>
 
        </Container>

@@ -3,7 +3,7 @@ import React from "react"
 
 
 
-const SearchInput = ({searchBooks, handleInputChange, handleSubmit})=>{ 
+const SearchInput = ({searchBook, handleInputChange, handleSubmit})=>{ 
 
    return(
     <div className="col-md-12">
@@ -11,8 +11,8 @@ const SearchInput = ({searchBooks, handleInputChange, handleSubmit})=>{
     <br/>
     <input className="search-input"
               type="text" 
-               name="searchBooks"
-               value ={searchBooks}
+               name="searchTerm"
+               value ={searchBook}
                onChange={handleInputChange}/>
     <br/>
     <button type="submit" className="search-btn"
