@@ -9,8 +9,8 @@ export default {
        return axios.post("/api/books", data)
     },
 
-    deleteBook : function (data){
-        return axios.delete("/api/books/:id", data)
+    deleteBook : function (data, id){
+        return axios.delete("/api/books/" + id, data)
      }
 
 }

@@ -12,8 +12,8 @@ const Saved = () =>{
 
     const getSavedBooks = ()=>{
        API.getBooks()
-       .then(savedBook => {
-           setSavedBooks(savedBook.data)
+       .then(storedBook => {
+           setSavedBooks(storedBook.data)
        })
 
     }
@@ -32,9 +32,10 @@ const Saved = () =>{
     })
     console.log(findBook)
 
-    API.deleteBook(findBook)
+    API.deleteBook(findBook, id)
     .then(response => 
-        console.log(response))
+             {console.log(response)
+             getSavedBooks()})
     .catch(err => console.log(err))
 
    }
