@@ -2,7 +2,7 @@ import axios from "axios"
 
 export default {
     getBooks : function (){
-      return axios("/api/books")
+      return axios.get("/api/books")
     },
 
     saveBook : function (data){
@@ -10,7 +10,7 @@ export default {
     },
 
     deleteBook : function (data){
-        return axios.post("/api/books/:id", data)
+        return axios.delete("/api/books/:id", data)
      }
 
 }

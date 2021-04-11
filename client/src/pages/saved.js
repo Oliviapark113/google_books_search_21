@@ -1,5 +1,4 @@
 import React , {useState, useEffect }from "react"
-import { useHistory } from 'react-router-dom'
 import Container from "../components/container"
 import Row from "../components/row"
 import Col from "../components/col"
@@ -7,16 +6,31 @@ import HeaderText from "../components/headertext"
 import API from "../util/API"
 import SavedResults from "../components/savedResults"
 
-const Saved = ({savedBooks}) =>{
+const Saved = () =>{
+
+    const [savedBooks, setSavedBooks] = useState([])
+
+    const getSavedBooks = ()=>{
+       API.getBooks()
+       .then(savedBook => {
+           setSavedBooks(savedBook.data)
+       })
+
+    }
+
+    useEffect(()=>{
+        getSavedBooks()
+    }, [])
+    
+    
   
-   
 
    const handleDelete = id => {
        
-
     const findBook = savedBooks.find(book=>{
-      return book.id === id
+      return book._id === id
     })
+    console.log(findBook)
 
     API.deleteBook(findBook)
     .then(response => 
@@ -35,6 +49,7 @@ const Saved = ({savedBooks}) =>{
           </Row>
           <Row>
               <SavedResults
+               savedBooks={savedBooks}
                handleDelete = {handleDelete}
               />
           </Row>

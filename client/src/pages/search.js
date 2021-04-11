@@ -11,13 +11,11 @@ import API from "../util/API"
 import axios from "axios"
 
 
-
-
 const Search = () =>{
 
     const [ searchBook , setSearchBook] = useState("javascript")
     const [ searchResults , setSearchResults] = useState([])
-    const savedBooks = []
+    // const savedBooks = []
 
    
     const history = useHistory()
@@ -69,8 +67,8 @@ const Search = () =>{
           }
           API.saveBook(bookData)
             .then(response => {
-                savedBooks.push(response)
-                console.log(savedBooks)
+                // savedBooks.push(response)
+                // console.log(savedBooks)
                 history.push("/saved")
             }
                

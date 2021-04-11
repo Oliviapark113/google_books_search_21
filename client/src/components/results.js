@@ -1,5 +1,5 @@
 import React from "react"
-import {Link} from "react-router-dom"
+
 
 
 
@@ -18,7 +18,7 @@ const Results = ({searchResults, handleView , handleSave })=>{
                 <button onClick ={handleView} className="view-btn"> <a href={book.volumeInfo.infoLink}>View</a>
                 </button>
                 <button 
-                onClick={()=>{handleSave(book.id)}} className="save-btn"><Link to="/saved">Save</Link></button>
+                onClick={()=>{handleSave(book.id)}} className="save-btn">Save</button>
             </div>
           </row>
           <div className="col-md-4">

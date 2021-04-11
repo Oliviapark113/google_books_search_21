@@ -28,9 +28,13 @@ module.exports = {
   },
 
   deleteBook: function(req, res) {
+    console.log(req.params)
     const {id } = req.params
     Book.findByIdAndDelete(id)
     .then(book => {res.json(book)})
-    .catch(err =>res.status(500).send())
+    .catch(err =>{
+      console.log(err)
+      res.status(500).send()
+    })
   },
 }
