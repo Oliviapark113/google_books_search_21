@@ -53,6 +53,7 @@ const Search = () =>{
         const findBook = searchResults.find(book=>{
               return book.id === id
         })
+        console.log(findBook)
          
         const bookData = {
 
@@ -60,12 +61,13 @@ const Search = () =>{
             authors: findBook.volumeInfo.authors,
             description: findBook.volumeInfo.description,
             image: findBook.volumeInfo.imageLinks.thumbnail,
-            link:findBook.volumeInfo.infoLink
+            link:findBook.volumeInfo.infoLink,
+          
            
           }
           API.saveBook(bookData)
             .then(response => {
-
+                
                 history.push("/saved")
             }
                
