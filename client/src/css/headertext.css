@@ -11,3 +11,22 @@ h1{
 p{
     font-size: 28px; 
 }
+
+
+@media screen and (max-width:540px){
+
+    .title{
+        margin: 20px;
+        text-align:center;
+    }
+    
+    h1{
+        font-weight: bold;
+        font-size: 40px;
+    }
+    
+    p{
+        font-size: 20px; 
+    }
+
+}
