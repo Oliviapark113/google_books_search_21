@@ -26,12 +26,29 @@ body {
 
 }
 
-@media screen and (max-width:540px){
+@media screen and (max-width:640px){
 
     .navbar{
        display: flex;
        flex-direction: column;
-      justify-content: center;
+      justify-content: center; 
+      
+    }
+   
+    .navbar-nav{
+        display: flex;
+        flex-direction: column;
+       justify-content: center;
+       text-align:center; 
+    }
+
+    .nav-item{
+        display: flex;
+        align-self: center;
+       
+    }
+    .nav-link{
+        text-align:center;
     }
 
 }

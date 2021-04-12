@@ -1,5 +1,8 @@
 import React from "react"
 import '../css/savedResults.css'
+import Container from './container'
+import Row from './row'
+import Col from './col'
 
 
 
@@ -8,32 +11,30 @@ const SavedResults = ({ savedBooks, handleDelete }) => {
   return (
     savedBooks.map(book =>
 
-      (<div className="container results-container" key={book.id}>
-        <row className="title-row">
-          <div className="col-md-6">
+      (<Container className="container results-container" key={book.id}>
+        <Row className="title-row">
+          <Col className="col-md-6">
             <h3 className="title-text">{book.title}</h3>
             <h3 className="authors-text">{book.authors}</h3>
-          </div>
-          <div className="col-md-6 btn-container">
+          </Col>
+          <Col className="col-md-6 btn-container">
             <button onClick={() => { handleDelete(book._id) }} className="delete-btn">Delete</button>
             <button className="view-btn"> <a href={book.link} target="_blank">View</a>
             </button>
-
-          </div>
-        </row>
-        <row className="contents-row">
-          <div className="col-md-4">
+          </Col>
+        </Row>
+        <Row className="contents-row">
+          <Col className="col-md-4">
             <img src={book.image} alt={book.title} />
-          </div>
+          </Col>
 
-          <div className="col-md-8">
+          <Col className="col-md-8">
             <h3 className="description-text">
               {book.description}
-
             </h3>
-          </div>
-        </row>
-      </div>
+          </Col>
+        </Row>
+      </Container>
       )
 
 

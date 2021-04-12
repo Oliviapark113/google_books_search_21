@@ -78,3 +78,35 @@ img{
 .description-text{
     font-size: 20px;
 }
+
+@media screen and (max-width:680px){
+
+     .title-row{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+
+    .contents-row{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .title-text,
+    .authors-text {
+      text-align: left;
+      font-size: 20px;
+      margin:0;
+      padding:0;
+    }
+ 
+    img{
+     display: block;
+        width:250px;
+
+    }
+
+
+}

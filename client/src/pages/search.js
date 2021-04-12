@@ -53,7 +53,6 @@ const Search = () =>{
         const findBook = searchResults.find(book=>{
               return book.id === id
         })
-        console.log(findBook)
          
         const bookData = {
 
@@ -86,10 +85,11 @@ const Search = () =>{
              </Col>
          </Row>
          <Row>
-    
+          
              <SearchInput handleInputChange = {handleInputChange}
             searchBook = {searchBook}
-            handleSubmit={handleSubmit}/>         
+            handleSubmit={handleSubmit}/>
+                
          </Row>
          <Row>
              <Results

@@ -1,13 +1,14 @@
 
 import React from "react"
 import "../css/search-input.css"
+import Container from "./container"
 
 
 
 const SearchInput = ({searchBook, handleInputChange, handleSubmit})=>{ 
 
    return(
-       <div className="col-md-12 search-container">
+       <Container className="col-md-12 search-container">
          
                <label htmlFor="bookSearch">Book Search</label>
                <br />
@@ -20,7 +21,7 @@ const SearchInput = ({searchBook, handleInputChange, handleSubmit})=>{
                <button type="submit" className="search-btn"
                    onClick={handleSubmit}>Search</button>
         
-       </div>
+       </Container>
     )
 
 

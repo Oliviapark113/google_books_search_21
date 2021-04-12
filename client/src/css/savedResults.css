@@ -84,3 +84,27 @@ img{
     font-weight: bold;
     line-height: 1.6;
 }
+
+
+@media screen and (max-width:680px){
+   
+    .title-text,
+    .authors-text {
+      text-align: left;
+      font-size: 24px;
+      margin:0;
+      padding:0;
+    }
+
+    .contents-row{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    img{
+        display: block;
+        width:250px;
+    }
+
+}
