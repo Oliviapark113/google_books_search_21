@@ -5,7 +5,7 @@ import '../css/nav.css'
 const Nav = () => 
  (
 
-  <nav className="navbar navbar-expand-lg navbar-light bg-light">
+  <nav className="navbar navbar-expand-lg">
   <div className="container-fluid">
     <Link to="/" className="nav-link" href="#">Search</Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

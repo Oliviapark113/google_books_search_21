@@ -1,5 +1,6 @@
 import React from "react"
 import Col from "../components/col"
+import "../css/headertext.css"
 
 const HeaderText = props =>(
     <>

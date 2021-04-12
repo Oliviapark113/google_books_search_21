@@ -1,12 +1,13 @@
 
 import React from "react"
+import "../css/search-input.css"
 
 
 
 const SearchInput = ({searchBook, handleInputChange, handleSubmit})=>{ 
 
    return(
-    <div className="col-md-12">
+    <div className="col-md-12 search-container">
     <label htmlFor="bookSearch">Book Search</label>
     <br/>
     <input className="search-input"

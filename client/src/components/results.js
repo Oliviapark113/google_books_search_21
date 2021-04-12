@@ -15,10 +15,11 @@ const Results = ({ searchResults, handleView, handleSave }) => {
             <p className="authors-text">{book.volumeInfo.authors}</p>
           </div>
           <div className="col-md-6 btn-container">
-            <button onClick={handleView} className="view-btn"> <a href={book.volumeInfo.infoLink}>View</a>
-            </button>
-            <button
+          <button
               onClick={() => { handleSave(book.id) }} className="save-btn">Save</button>
+            <button onClick={handleView} className="view-btn"> <a href={book.volumeInfo.infoLink } target="_blank">View</a>
+            </button>
+
           </div>
         </row>
         <row className="contents-row">

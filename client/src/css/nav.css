@@ -4,7 +4,19 @@ body {
     font-weight: bold;
 }
 
+.navbar{
+    background-color:#546e7a;
+    padding: 10px;
+}
 
 .nav-link {
-    color: black;
+    color: whitesmoke;
+    pointer-events: cursor;
+}
+
+.nav-link:hover{
+    color:#f9fbe7;
+    font-size: 30px;
+    font-weight: bodler;
+
 }
