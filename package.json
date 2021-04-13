@@ -1,7 +1,7 @@
 {
-  "name": "my_daily_doodle_starter",
+  "name": "google_books_search",
   "version": "1.0.0",
-  "description": "daily_doodles_actitivities",
+  "description": "google_books_search",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",

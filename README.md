@@ -25,4 +25,4 @@ Utilize Node, Express and MongoDB so that users can save books to review or purc
 ![Demo](./Demo.gif)
 
 ### Deployed Link: 
-[Deployed Sites: Google Book Search](https://oliviapark113.github.io/google_books_search_21/).
+[Deployed Sites: Google Book Search](https://polar-lowlands-42713.herokuapp.com/).
