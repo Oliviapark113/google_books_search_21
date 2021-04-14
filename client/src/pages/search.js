@@ -25,8 +25,8 @@ const Search = () => {
     }, [])
 
     const fetchBookData = e => {
-
-        axios(`https://www.googleapis.com/books/v1/volumes?q=${searchBook}`)
+        
+        axios(`https://www.googleapis.com/books/v1/volumes?q=${searchBook}&key=${process.env.REACT_APP_GOOGLE_BOOK_API}`)
             .then(response => {
                 setSearchResults(response.data.items)
             })
